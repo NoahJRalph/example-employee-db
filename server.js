@@ -12,17 +12,37 @@ const viewAllDepartments = () => {
     db.query(`SELECT * FROM departments ORDER BY name_id ASC;`, function (err, results) {
         console.log(`\n`);
         console.table(results);
-})};
+    });
+    continuePrompt();
+};
 const viewAllRoles = () => {
     db.query(`SELECT * FROM roles ORDER BY title ASC;`, function (err, results) {
         console.log(`\n`);
         console.table(results);
-})};
+    });
+    continuePrompt();
+};
 const viewAllEmployees = () => {
     db.query(`SELECT * FROM employees ORDER BY last_name ASC;`, function (err, results) {
         console.log(`\n`);
         console.table(results);
-})};
+    });
+    continuePrompt();
+};
+const continuePrompt = () => {
+    inquirer.prompt({
+        type: `confirm`,
+        name: `continue`,
+        message: `Would you like to continue?`,
+        default: true
+    })
+    .then((promptInput) => {
+        if(promptInput.continue == true) {
+            init();
+        }
+        else {process.exit()}
+    });
+};
 const init = async () => {
     console.clear();
     console.log(`Connected! Welcome to the:

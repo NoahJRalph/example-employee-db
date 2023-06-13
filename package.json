@@ -1,0 +1,26 @@
+{
+  "name": "example-employee-db",
+  "version": "1.0.0",
+  "description": "My example MySQL employee database.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node db/seed.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoahJRalph/example-employee-db.git"
+  },
+  "author": "Noah J Ralph",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NoahJRalph/example-employee-db/issues"
+  },
+  "homepage": "https://github.com/NoahJRalph/example-employee-db#readme",
+  "dependencies": {
+    "dotenv": "^16.1.4",
+    "inquirer": "8.2.4",
+    "mysql2": "^3.3.4"
+  }
+}
